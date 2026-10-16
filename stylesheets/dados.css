@@ -35,7 +35,7 @@ body {
 
 .main-content {
     flex: 1;
-    padding: 20px; /* Reduzido de 40px para poupar espaço no celular */
+    padding: 20px; /* para poupar espaço no celular */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,8 +46,8 @@ body {
 .dice-config-panel {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Reduzido o espaçamento */
-    flex-wrap: wrap; /* ESSENCIAL: Faz os itens quebrarem linha no celular */
+    gap: 20px; 
+    flex-wrap: wrap; /* Faz os itens quebrarem linha no celular */
     width: 100%;
     max-width: 800px;
     background-color: var(--bg-card);
@@ -94,20 +94,20 @@ body {
     padding: 10px;
 }
 
-/* O contêiner agora se adapta ao conteúdo */
+/* O contêiner se adapta ao conteúdo */
 .dice-grid {
     width: 100%;
-    min-height: 200px; /* Mudado de height fixo para min-height */
+    min-height: 200px; 
     position: relative;
     display: flex;
-    flex-wrap: wrap; /* Organiza os dados dinamicamente no mobile */
+    flex-wrap: wrap; /* Organiza os dados dinamicamente no celular */
     gap: 15px;
     justify-content: center;
     align-items: center;
 }
 
-/* Removidas as larguras fixas de grid das classes dados-4 e dados-6 
-   para que o flex-wrap do .dice-grid cuide do alinhamento automático */
+/* larguras flexiveis de grid das classes dados-4 e dados-6 
+   para que o flex-wrap do .dice-grid cuide do alinhamento automático e funcione no celular*/
 .dice-grid.dados-4, 
 .dice-grid.dados-6 {
     display: flex; 
@@ -115,7 +115,7 @@ body {
 
 .dice-mockup {
     position: relative;
-    width: 100px; /* Reduzido de 130px para caber melhor lado a lado no celular */
+    width: 100px; /* para caber melhor lado a lado no celular */
     height: 100px;
     background-color: var(--dice);
     border-radius: 12px; 
@@ -125,35 +125,6 @@ body {
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.15);
     border: 2px solid var(--border-color);
     flex-shrink: 0; /* Impede o dado de esmagar */
-}
-
-/* Valor Principal do Centro */
-.main-value {
-    font-size: 28px; /* Ajustado proporcionalmente ao novo tamanho do dado */
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    user-select: none;
-}
-
-/* Números secundários simulando as outras faces do d20 da imagem */
-.dice-sub-num {
-    position: absolute;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 500;
-}
-
-.dice-sub-num.top {
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.dice-sub-num.left {
-    bottom: 20px;
-    left: 15px;
-    transform: rotate(-30deg);
 }
 
 /* ÁREA DE AÇÃO (BOTÃO E TOTAL) */

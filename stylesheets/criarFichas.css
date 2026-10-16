@@ -27,7 +27,7 @@ body {
     flex-direction: column;
 }
 
-/* CONTAINER DA DASHBOARD (IGUAL ÀS OUTRAS ABAS) */
+/* CONTAINER DA DASHBOARD */
 .dashboard-container {
     display: flex;
     flex: 1;
@@ -56,7 +56,7 @@ h1 {
 }
 
 /* ==========================================================================
-   2. PAINÉIS DE FORMULÁRIO (PADRÃO DOS CARDS DA COMUNIDADE)
+   2. PAINÉIS DE FORMULÁRIO 
    ========================================================================== */
 .CharacterInfoBox {
     background-color: var(--bg-card);
@@ -96,7 +96,7 @@ input:focus, textarea:focus {
 }
 
 /* ==========================================================================
-   3. SEÇÃO: CREATE CHARACTER (GRID DE 2 COLUNAS)
+   3. SEÇÃO: CREATE CHARACTER 
    ========================================================================== */
 #formCharacterInfoBox {
     display: grid;
@@ -120,7 +120,7 @@ input:focus, textarea:focus {
 }
 
 /* ==========================================================================
-   4. SEÇÃO: CHARACTER STATUS (ALINHAMENTO EM TABELA DINÂMICA)
+   4. SEÇÃO: CHARACTER STATUS 
    ========================================================================== */
 #formCharacterStatusBox {
     display: flex;
@@ -148,7 +148,7 @@ input:focus, textarea:focus {
     color: var(--text-primary);
 }
 
-/* Caixas de ícones combinando com a borda gold do avatar */
+/* Fotinha com a borda dourada do avatar */
 .placeholder-icon {
     width: 24px;
     height: 24px;
@@ -249,7 +249,7 @@ input:focus, textarea:focus {
 }
 
 /* ==========================================================================
-   6. BOTÃO SALVAR (PADRÃO TEMA VERDE DE SUCESSO DO SEU PROJETO)
+   6. BOTÃO SALVAR 
    ========================================================================== */
 .form-actions {
     display: flex;
@@ -274,7 +274,7 @@ input:focus, textarea:focus {
 }
 
 /* ==========================================================================
-   7. RESPONSIVIDADE COMPLETA MÓVEL
+   7. RESPONSIVIDADE 
    ========================================================================== */
 @media (max-width: 900px) {
     #bottomSection {
