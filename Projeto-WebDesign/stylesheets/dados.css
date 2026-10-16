@@ -1,0 +1,216 @@
+:root {
+    --bg-main: #0d1117;
+    --bg-dashboard: #11161d;
+    --bg-card: #151d26;
+    --bg-input: #1b242f;
+    --bg-nav: #161e27;
+    --text-primary: #ffffff;
+    --text-secondary: #8b9aa7;
+    --border-color: #273544;
+    --dice: #2e1cd4;
+    --dice-houver: #2660dc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTAINER DA DASHBOARD */
+.dashboard-container {
+    display: flex;
+    flex: 1;
+    background-color: var(--bg-dashboard);
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px; /* Reduzido de 40px para poupar espaço no celular */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* PAINEL DE CONFIGURAÇÃO (TOPO) */
+.dice-config-panel {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduzido o espaçamento */
+    flex-wrap: wrap; /* ESSENCIAL: Faz os itens quebrarem linha no celular */
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.config-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.config-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.config-group select {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ÁREA DE EXIBIÇÃO DOS DADOS */
+.dice-display-area {
+    width: 100%;
+    max-width: 900px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    border: 1px dashed rgba(39, 53, 68, 0.3);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* O contêiner agora se adapta ao conteúdo */
+.dice-grid {
+    width: 100%;
+    min-height: 200px; /* Mudado de height fixo para min-height */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; /* Organiza os dados dinamicamente no mobile */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Removidas as larguras fixas de grid das classes dados-4 e dados-6 
+   para que o flex-wrap do .dice-grid cuide do alinhamento automático */
+.dice-grid.dados-4, 
+.dice-grid.dados-6 {
+    display: flex; 
+}
+
+.dice-mockup {
+    position: relative;
+    width: 100px; /* Reduzido de 130px para caber melhor lado a lado no celular */
+    height: 100px;
+    background-color: var(--dice);
+    border-radius: 12px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 2px solid var(--border-color);
+    flex-shrink: 0; /* Impede o dado de esmagar */
+}
+
+/* Valor Principal do Centro */
+.main-value {
+    font-size: 28px; /* Ajustado proporcionalmente ao novo tamanho do dado */
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+
+/* Números secundários simulando as outras faces do d20 da imagem */
+.dice-sub-num {
+    position: absolute;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.dice-sub-num.top {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dice-sub-num.left {
+    bottom: 20px;
+    left: 15px;
+    transform: rotate(-30deg);
+}
+
+/* ÁREA DE AÇÃO (BOTÃO E TOTAL) */
+.dice-action-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.btn-roll {
+    background-color: var(--dice);
+    color: #ffffff;
+    border: none;
+    padding: 14px 0;
+    width: 100%; /* O botão ocupa a largura disponível no celular */
+    max-width: 300px; /* Mas não passa de 300px para ficar elegante */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(28, 38, 185, 0.4);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-roll:hover {
+    background-color: var(--dice-houver);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(38, 96, 220, 0.6);
+}
+
+.total-display {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.total-value {
+    color: #3da8f5;
+    font-size: 24px;
+}
+
+.dice-rolling {
+  animation: shake 0.1s infinite alternate;
+}
+
+@keyframes shake {
+  from { transform: rotate(-5deg) scale(0.95); }
+  to { transform: rotate(5deg) scale(1.05); }
+}
+
+#dice-canvas {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}

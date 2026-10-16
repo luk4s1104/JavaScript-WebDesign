@@ -1,0 +1,622 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GERAIS - TEMA ESCURO
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Cor de fundo escura global  */
+    background-color: #0f172a; 
+    color: #e2e8f0; 
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth; /* Faz a rolagem suave */
+}
+
+/* ==========================================================================
+   2. HEADER (CABEÇALHO) 
+   ========================================================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background-color: #1a2335; 
+    border-bottom: 1px solid #334155; /* Linha divisória sutil */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img img {
+    height: 32px;
+    width: auto;
+    display: block;
+    filter: invert(100%) brightness(1000%);
+}
+
+.logo-texto {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ffffff; 
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+/* Efeito Underline nos Links do Header - Cor Clara */
+.cta-buttons a {
+    text-decoration: none;
+    color: #94a3b8; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.cta-buttons a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0d9488; 
+    transition: width 0.25s ease-in-out;
+}
+
+.cta-buttons a:hover {
+    color: #0d9488; 
+}
+
+.cta-buttons a:hover::after {
+    width: 100%;
+}
+
+ /* ==========================================================================
+   3. HERO SECTION (BANNER PRINCIPAL)
+   ========================================================================= */
+.conteudo-principal {
+    background-color: #0f172a; 
+
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(15, 23, 42, 0.95) 0%, 
+        rgba(15, 23, 42, 0.85) 35%, 
+        rgba(15, 23, 42, 0.4) 70%, 
+        rgba(15, 23, 42, 0.1) 100%
+    ), 
+    url('../Img_folder/rog-dados.png');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: saturate(120%) contrast(105%);
+    
+    color: #ffffff;
+    padding: 120px 8%; 
+    min-height: 520px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    position: relative; 
+}
+
+
+.conteudo-principal h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    max-width: 800px;
+    color: #ffffff;
+}
+
+.conteudo-principal p {
+    font-size: 1.15rem;
+    color: #d1d5db; 
+    margin-bottom: 35px;
+    max-width: 680px;
+}
+
+
+/* Botões do Hero */
+.acoes-principais {
+    display: flex;
+    gap: 16px;
+}
+
+.botao-saiba-mais, 
+.botao-quem-somos {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Botão Principal (Ver Como Funciona) */
+.botao-saiba-mais {
+    background-color: #0d9488; 
+    color: #ffffff;
+    border: none;
+}
+
+.botao-saiba-mais:hover {
+    background-color: #0f766e;
+}
+
+/* Botão Secundário (Sobre nós) */
+.botao-quem-somos {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #475569;
+}
+
+.botao-quem-somos:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #94a3b8;
+}
+
+/* ==========================================================================
+   3. BOM PARA O SEU SISTEMA
+   ========================================================================== */
+.secao-explicativa-dupla {
+    padding: 80px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start; /* Alinha o topo da imagem com o topo do texto */
+    gap: 56px; 
+}
+
+.conteudo-lado {
+    flex: 1.2; 
+}
+
+/* Espaçamento interno para os blocos de texto não ficarem grudados */
+.conteudo-lado .bloco-recurso {
+    margin-bottom: 28px; /* Dá espaço entre o fim de um parágrafo e o próximo h3 */
+}
+
+.conteudo-lado h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 8px; /* Afasta o h3 do seu respectivo parágrafo */
+}
+
+.conteudo-lado p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Lado da Imagem */
+.imagem-lado {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; /* Ajuste fino para alinhar perfeitamente com a altura do h2 */
+}
+
+.imagem-lado img {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    border-radius: 8px; 
+    border: 1px solid #334155; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    display: block;
+}
+
+/* Forçando a estilização correta do Botão Verde Ciano */
+.alinhamento-botao {
+    margin-top: 32px;
+}
+
+.botao-sistema-destaque {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none ; /* Remove qualquer sublinhado roxo */
+    background-color: #0d9488 ; 
+    color: #ffffff ; /* Força o texto branco */
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.botao-sistema-destaque:hover {
+    background-color: #0f766e ; /* Hover escurecido igual ao botão saiba mais */
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 992px) {
+    .secao-explicativa-dupla {
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 40px;
+    }
+    
+    .imagem-lado {
+        width: 100%;
+        margin-top: 0;
+    }
+    
+    .imagem-lado img {
+        max-width: 100%; 
+    }
+}
+
+
+/* ==========================================================================
+   4. SEÇÕES INFORMATIVAS (CONTEÚDO)
+   ========================================================================== */
+.secao-explicativa {
+    padding: 80px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.secao-explicativa h2 {
+    font-size: 2rem;
+    color: #ffffff; 
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.bloco-recurso {
+    margin-bottom: 32px;
+}
+
+.bloco-recurso h3 {
+    font-size: 1.2rem;
+    color: #ffffff; 
+    margin-bottom: 8px;
+}
+
+.bloco-recurso p {
+    color: #cbd5e1; 
+    font-size: 1rem;
+    max-width: 750px;
+}
+
+/* ==========================================================================
+   4.1 CONFIGURAÇÃO DA SEÇÃO DUPLA (SISTEMA EXCLUSIVO)
+   ========================================================================== */
+.secao-explicativa-dupla {
+    padding: 80px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 56px; 
+}
+
+.secao-explicativa-dupla h2 {
+    font-size: 2rem;
+    color: #ffffff; 
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.conteudo-lado {
+    flex: 1.2; 
+}
+
+.conteudo-lado .bloco-recurso {
+    margin-bottom: 28px; 
+}
+
+.imagem-lado {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.imagem-lado img {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    border-radius: 8px; 
+    border: 1px solid #334155; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    display: block;
+}
+
+.alinhamento-botao {
+    margin-top: 32px;
+}
+
+.botao-sistema-destaque {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none ;
+    background-color: #0d9488 ;
+    color: #ffffff ;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.botao-sistema-destaque:hover {
+    background-color: #0f766e ;
+}
+
+/* ==========================================================================
+   4.3 CONFIGURAÇÃO DA SEÇÃO DE DADOS (IMAGEM NA ESQUERDA)
+   ========================================================================== */
+.secao-dados-dupla {
+    padding: 80px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 56px; 
+}
+
+.secao-dados-dupla h2 {
+    font-size: 2rem;
+    color: #ffffff; 
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.conteudo-dados {
+    flex: 1.2; 
+}
+
+.conteudo-dados .bloco-recurso {
+    margin-bottom: 28px; 
+}
+
+.imagem-dados {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.imagem-dados img {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    border-radius: 8px; 
+    border: 1px solid #334155; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    display: block;
+}
+
+.botao-dados-destaque {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none ;
+    background-color: #0d9488 ;
+    color: #ffffff ;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.botao-dados-destaque:hover {
+    background-color: #0f766e ;
+}
+
+/* ==========================================================================
+   4.2 CONFIGURAÇÃO DA SEÇÃO SOBRE NÓS
+   ========================================================================== */
+.sobre-nos {
+    padding: 80px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start; 
+    gap: 56px; 
+}
+
+.sobre-nos h2 {
+    font-size: 2rem;
+    color: #ffffff; 
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.imagem-sobre {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; 
+}
+
+.imagem-sobre img {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: block;
+}
+
+.conteudo-sobre {
+    flex: 1.2;
+}
+
+.sub-bloco-sobre {
+    margin-bottom: 32px;
+}
+
+.sub-bloco-sobre h3 {
+    font-size: 1.2rem;
+    color: #ffffff; 
+    margin-bottom: 12px;
+}
+
+.sub-bloco-sobre p {
+    color: #cbd5e1; 
+    font-size: 1rem;
+    max-width: 800px;
+}
+
+.lista-integrantes {
+    list-style: none;
+}
+
+.lista-integrantes li {
+    color: #cbd5e1; 
+    padding: 8px 0;
+    border-bottom: 1px solid #334155; 
+    font-size: 0.95rem;
+    max-width: 400px;
+}
+
+.lista-integrantes li:hover {
+    color: #ffffff;
+    padding-left: 5px;
+    transition: all 0.25s ease;
+    text-shadow: 0 0 8px rgba(13, 148, 136, 0.4);
+}
+
+/* ==========================================================================
+   4.4 LINHAS DIVISÓRIAS EM DEGRADÊ
+   ========================================================================== */
+
+/* Linha entre: Como Funciona e Sistema Próprio */
+.secao-explicativa + .secao-explicativa-dupla {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+        to right, 
+        rgba(51, 65, 85, 0) 0%, 
+        rgba(13, 148, 136, 0.4) 50%, 
+        rgba(51, 65, 85, 0) 100%
+    ) 1;
+}
+
+/* Linha entre: Sistema Próprio e Rolador de Dados */
+.secao-explicativa-dupla + .secao-dados-dupla {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+        to right, 
+        rgba(51, 65, 85, 0) 0%, 
+        rgba(13, 148, 136, 0.4) 50%, 
+        rgba(51, 65, 85, 0) 100%
+    ) 1;
+}
+
+/* Linha entre: Rolador de Dados e Sobre Nós */
+.secao-dados-dupla + .sobre-nos {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+        to right, 
+        rgba(51, 65, 85, 0) 0%, 
+        rgba(13, 148, 136, 0.4) 50%, 
+        rgba(51, 65, 85, 0) 100%
+    ) 1;
+}
+
+/* ==========================================================================
+   5. RODAPÉ (FOOTER) - Tema Escuro
+   ========================================================================== */
+.rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    border-top: 1px solid #334155; 
+    background-color: #1a2335; 
+    font-size: 0.875rem;
+    color: #94a3b8; 
+}
+
+.links-rodape {
+    display: flex;
+    gap: 20px;
+}
+
+.links-rodape a {
+    color: #94a3b8; 
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.links-rodape a:hover {
+    color: #0d9488; 
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .cta-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .conteudo-principal h1 {
+        font-size: 2.2rem;
+    }
+
+    .secao-explicativa, 
+    .sobre-nos {
+        padding: 50px 5%;
+    }
+
+    .rodape {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+}
