@@ -21,7 +21,7 @@ O projeto adota uma arquitetura modular para separar as responsabilidades e mant
 
 ```text
 ├── Img_folder/          # Ativos visuais, ilustrações medievais e imagens de suporte
-├── documentos/          # Documentos e relatórios de suporte acadêmico do projeto
+├── documentos/          # Documentos de medidas políticas do site
 ├── pages/               # Telas e módulos secundários estruturados em HTML5
 ├── scripts/             # Camada de lógica computacional desenvolvida em JavaScript
 ├── stylesheets/         # Folhas de estilo responsáveis pelo design em CSS3
